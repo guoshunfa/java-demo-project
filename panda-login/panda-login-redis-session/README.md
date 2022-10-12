@@ -1,6 +1,6 @@
 # redis 控制session
 
-> 需求：redis统一管理session信息，可支持多服务之间session通信。
+> redis统一管理session信息，可支持多服务之间session通信。
 
 ## 类描述
 

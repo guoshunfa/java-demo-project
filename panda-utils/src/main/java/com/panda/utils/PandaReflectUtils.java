@@ -149,7 +149,7 @@ public class PandaReflectUtils {
      * @return 属性不存在返回null
      */
     public static Field getField(Class<?> clazz, String fieldName) {
-        String[] split = StringUtils.split(fieldName, "\\.");
+        String[] split = fieldName.split("\\.");
         // 递归获取到最结尾属性field
         Field field = getMultilayerField(clazz, split, 0);
         if (field == null) {

@@ -19,7 +19,9 @@ import java.lang.annotation.*;
  * 遗留问题：
  * 1、指定消费线程数
  *
- **/
+ *
+ * @author guoshunfa
+ */
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
@@ -29,14 +31,14 @@ public @interface MqTopicGroupListener {
      * TopicName<br/>
      * 1. 已支持spel表达式，通过属性topicIsUseSpel进行控制开关。（为了实现动态参数。）
      *
-     * @return
+     * @return topic
      */
     String topic();
 
     /**
      * topic 是否使用了spel表达式
      *
-     * @return
+     * @return topic 是否使用了spel表达式
      */
     boolean topicIsUseSpel() default false;
 
@@ -44,7 +46,7 @@ public @interface MqTopicGroupListener {
      * 消费组id，消费组的概率与kafka消费组的概念一致，当没有指定值时，每个应用实例都会消费同一条数据<br/>
      * 已弃用，不再继续维护。
      *
-     * @return
+     * @return 消费组id
      */
     @Deprecated
     String groupId() default "";
@@ -52,7 +54,7 @@ public @interface MqTopicGroupListener {
     /**
      * kafka服务类型，默认为业务平台kafka。
      *
-     * @return
+     * @return kafka服务类型
      */
     KafkaServiceType kafkaServiceType() default KafkaServiceType.COMMON;
 
